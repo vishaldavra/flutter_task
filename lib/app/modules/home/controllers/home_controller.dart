@@ -170,6 +170,7 @@ class HomeController extends GetxController {
       RxList<ExpenseModel> expenseList = RxList<ExpenseModel>(
           decodedList.map((item) => ExpenseModel.fromJson(item)).toList());
       expenseList.add(expenseEntered.value);
+      expenseListAll.value=expenseList;
       box.write(ArgumentConstants.ExpenseList, jsonEncode(expenseList));
     } else {
       RxList<ExpenseModel> expenseList = RxList<ExpenseModel>([]);
